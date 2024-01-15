@@ -1,0 +1,26 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "title": "Curso de Especialización",
+        "description": "Curso de Especialización",
+        "price": "7000.00",
+        "slug": "curso-de-especializacion",
+        "image": "products/Leonardo_Diffusion_XL_a_raw_unfiltered_photographic_masterpiec_0.jpg",
+        "created_at": "2023-11-14T21:37:07.412Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "title": "Nuevo producto",
+        "description": "Nuevo producto",
+        "price": "1500.00",
+        "slug": "nuevo-producto",
+        "image": "products/Administración_de_Archivos.jpeg",
+        "created_at": "2023-11-14T22:40:51.249Z"
+    }
+}
+]
