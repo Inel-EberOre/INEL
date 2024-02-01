@@ -19,12 +19,14 @@
                         Mi carrito
                     </a>
                 </li>
+                {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a href="{{ shipping_addresses }}" class="nav-link {% if request.path == shipping_addresses %}active{% endif %}">
                         <i class="bi bi-geo-alt"></i>
                         Mis direcciones
                     </a>
                 </li>
+                {% endif %}
             </ul>
             <ul class="navbar-nav ms-auto">
                 {% if user.is_authenticated %} 
