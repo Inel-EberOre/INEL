@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'orders',
     'products',
     'categories',
+    'promo_codes',
     'shipping_addresses',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -119,6 +120,16 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+# Habilitar el envío de corroes
+from decouple import config
+EMAIL_HOST = 'smtp.googlemail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'i2125387@continental.edu.pe'
+#usar variables de entorno para proteger contraseña
+#Instalar decouple
+EMAIL_HOST_PASSWORD = config('USER_MAIL_PASSWORD')
+EMAIL_USE_TLS = True
 
 
 # Static files (CSS, JavaScript, Images)

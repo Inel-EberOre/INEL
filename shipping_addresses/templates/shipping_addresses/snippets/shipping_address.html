@@ -9,6 +9,7 @@
             {{ shipping_address.postal_code }}
         </div>
 
+        {% if edit %}
         <div class="mt-2 mb-5">
             <a href="{% url 'shipping_addresses:update' shipping_address.pk %}" class="btn btn-info">Editar</a>
             {% if shipping_address.default %}
@@ -20,5 +21,6 @@
               <a href="{% url 'shipping_addresses:delete' shipping_address.pk %}"class="btn btn-danger">Eliminar</a>
               {% endif %}
         </div>
+        {% endif %}
     </div>
 </div>
