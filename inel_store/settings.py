@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'products',
     'categories',
     'promo_codes',
+    'billing_profiles',
     'shipping_addresses',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -130,6 +131,10 @@ EMAIL_HOST_USER = 'i2125387@continental.edu.pe'
 #Instalar decouple
 EMAIL_HOST_PASSWORD = config('USER_MAIL_PASSWORD')
 EMAIL_USE_TLS = True
+
+#PAGOS STRIPE
+STRIPE_PUBLIC_KEY = 'pk_test_51LYBbcKJTmmzfx6WOrJFGmqEmDPjJk0uJLJLfYNomKJsBVTRMyc2wVyATTVND1f2mwfe7BMVyRMz87jZ3ZO3YhwJ00bTPgzt7D'
+STRIPE_PRIVATE_KEY = 'sk_test_51LYBbcKJTmmzfx6WrqgrKaORzkDfGhY7DMyUkiEbRabR6ZPBYPh0Lfw6tAKUrac8mjndniOZuMHChIAJE8pcjlQE00ejSAalPC'
 
 
 # Static files (CSS, JavaScript, Images)

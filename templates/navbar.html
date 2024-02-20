@@ -3,7 +3,8 @@
 {% url 'carts:cart' as cart %}
 {% url 'shipping_addresses:shipping_addresses' as shipping_addresses %}
 {% url 'orders:completeds' as completeds %}
-<!-- {% url 'logout' as logout %} -->
+{% url 'billing_profiles:billing_profiles' as billing_profiles %}
+
 
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <div class="container-fluid">
@@ -31,6 +32,12 @@
                     <a href="{{ completeds }}" class="nav-link {% if request.path == completeds %}active{% endif %}">
                         <i class="bi bi-box-seam"></i>
                         Mis pedidos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ billing_profiles }}" class="nav-link {% if request.path == billing_profiles %}active{% endif %}">
+                        <i class="bi bi-stripe"></i>
+                        Mis métodos de pago
                     </a>
                 </li>
                 {% endif %}
