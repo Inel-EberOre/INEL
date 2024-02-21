@@ -90,6 +90,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        # # -> Befor execute 'py manage.py migrate'
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'cf_inel_store',
+        # 'USER': 'root',
+        # 'PASSWORD': 'root',
+        # 'HOST': 'localhost',
+        # 'PORT': ''
+
     }
 }
 
