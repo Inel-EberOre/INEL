@@ -90,6 +90,12 @@ class Order(models.Model):
     def get_total(self):
         return self.cart.total + self.shipping_total - decimal.Decimal(self.get_discount())
 
+    @property
+    def description(self):
+        return 'Compra por ({}) producto(s)'.format(
+            self.cart.products.count()
+        )
+
 def set_order_id(sender, instance, *args, **kwargs):
     if not instance.order_id:
         instance.order_id = str(uuid.uuid4())
