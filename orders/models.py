@@ -41,7 +41,19 @@ class Order(models.Model):
             promo_code.use()
 
     def get_or_set_billing_profile(self):
-        pass
+        if self.billing_profile:
+            return self.billing_profile
+        
+        billing_profile = self.user.billing_profile
+
+        if billing_profile:
+            self.update_billing_profile(billing_profile)
+        
+        return billing_profile
+    
+    def update_billing_profile(self, billing_profile):
+        self.billing_profile = billing_profile
+        self.save()
 
     def get_or_set_shipping_address(self):
         if self.shipping_address:

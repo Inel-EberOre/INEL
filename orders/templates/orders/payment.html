@@ -11,5 +11,11 @@
     <div class="h3">
         Método de pago
     </div>
+    <div class="">
+      {% include 'billing_profiles/snippets/billing_profile.html' %}
+    </div>
+    <div class="mt-2">
+      <a href="{% url 'orders:confirm' %}" class="btn btn-warning">Confirmar</a>
+    </div>
   </div>
 {% endblock %}
