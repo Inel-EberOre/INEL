@@ -6,6 +6,7 @@ from django.db import models
 from users.models import User
 from carts.models import Cart
 from promo_codes.models import PromoCode
+from billing_profiles.models import BillingProfile
 from shipping_addresses.models import ShippingAddress
 
 from .common import OrderStatus
@@ -26,6 +27,8 @@ class Order(models.Model):
 
     promo_code = models.OneToOneField(PromoCode, null=True, blank=True, on_delete=models.CASCADE)
 
+    billing_profile = models.ForeignKey(BillingProfile, null=True, blank=True, on_delete=models.CASCADE)
+
     def __str__(self):
         return self.order_id
 
@@ -36,6 +39,9 @@ class Order(models.Model):
 
             self.update_total()
             promo_code.use()
+
+    def get_or_set_billing_profile(self):
+        pass
 
     def get_or_set_shipping_address(self):
         if self.shipping_address:

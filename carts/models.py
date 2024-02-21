@@ -14,7 +14,7 @@ from django.db.models.signals import m2m_changed
 
 # Create your models here.
 class Cart(models.Model):
-    card_id = models.CharField(max_length=100, null=False, blank=False, unique=True)
+    cart_id = models.CharField(max_length=100, null=False, blank=False, unique=True)
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     products = models.ManyToManyField(Product, through='CartProducts')
     subtotal = models.DecimalField(default=0.0, max_digits=8, decimal_places=2)

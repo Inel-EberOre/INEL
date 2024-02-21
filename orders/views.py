@@ -81,6 +81,18 @@ def check_address(request, cart, order, pk):
 
 @login_required(login_url='login')
 @validate_cart_and_order
+def payment(request, cart, order):
+    
+    billing_profile = order.get_or_set_billing_profile()
+
+    return render(request, 'orders/payment.html', {
+        'cart': cart,
+        'order': order,
+        'bradcrumb': breadcrumb(address=True, payment=True)
+    })
+
+@login_required(login_url='login')
+@validate_cart_and_order
 def confirm(request, cart, order):
     shipping_address = order.shipping_address
     if shipping_address is None:

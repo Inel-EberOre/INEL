@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('token', models.CharField(max_length=50)),
                 ('card_id', models.CharField(max_length=50)),
-                ('last_4', models.CharField(max_length=4)),
+                ('last4', models.CharField(max_length=4)),
                 ('brand', models.CharField(max_length=10)),
                 ('default', models.BooleanField(default=False)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
